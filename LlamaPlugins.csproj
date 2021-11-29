@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+    <PropertyGroup>
+        <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+        <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+        <ProjectGuid>{52B534C5-8543-497A-8188-FF5027AE9262}</ProjectGuid>
+        <OutputType>Library</OutputType>
+        <AppDesignerFolder>Properties</AppDesignerFolder>
+        <RootNamespace>LlamaPlugins</RootNamespace>
+        <AssemblyName>LlamaPlugins</AssemblyName>
+        <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+        <FileAlignment>512</FileAlignment>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugSymbols>true</DebugSymbols>
+        <DebugType>full</DebugType>
+        <Optimize>false</Optimize>
+        <OutputPath>bin\Debug\</OutputPath>
+        <DefineConstants>DEBUG;TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+        <PlatformTarget>AnyCPU</PlatformTarget>
+        <DebugType>pdbonly</DebugType>
+        <Optimize>true</Optimize>
+        <OutputPath>bin\Release\</OutputPath>
+        <DefineConstants>TRACE</DefineConstants>
+        <ErrorReport>prompt</ErrorReport>
+        <WarningLevel>4</WarningLevel>
+    </PropertyGroup>
+    <ItemGroup>
+        <Reference Include="GreyMagic">
+          <HintPath>..\..\GreyMagic.dll</HintPath>
+        </Reference>
+        <Reference Include="PresentationCore" />
+        <Reference Include="RebornBuddy">
+          <HintPath>..\..\RebornBuddy.exe</HintPath>
+        </Reference>
+        <Reference Include="System" />
+        <Reference Include="System.Core" />
+        <Reference Include="System.Data" />
+        <Reference Include="System.Drawing" />
+        <Reference Include="System.Windows.Forms" />
+        <Reference Include="System.Xml" />
+    </ItemGroup>
+    <ItemGroup>
+        <Compile Include="FCBuffs\BuffSettings.cs" />
+        <Compile Include="FCBuffs\BuffSetttingsFrm.cs" />
+        <Compile Include="FCBuffs\BuffSetttingsFrm.Designer.cs" />
+        <Compile Include="FCBuffs\FCActionPlugin.cs" />
+        <Compile Include="FCBuffs\FCActions.cs" />
+        <Compile Include="GlobalSuppressions.cs" />
+        <Compile Include="Repair\Repair.cs" />
+        <Compile Include="Repair\RepairSettings.cs" />
+        <Compile Include="Repair\RepairSettingsFrm.cs">
+          <SubType>Form</SubType>
+        </Compile>
+        <Compile Include="Repair\RepairSettingsFrm.Designer.cs">
+          <DependentUpon>RepairSettingsFrm.cs</DependentUpon>
+        </Compile>
+        <Compile Include="Ventures\VenturesPlugin.cs" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Include=".editorconfig" />
+      <Content Include=".gitignore" />
+      <Content Include="FCBuffs\FCActionPlugin.csproj" />
+    </ItemGroup>
+    <ItemGroup>
+      <ProjectReference Include="..\..\Quest Behaviors\__LlamaLibrary\LlamaLibrary.csproj">
+        <Project>{196ee308-0205-4cc4-b449-51064f7e9960}</Project>
+        <Name>LlamaLibrary</Name>
+      </ProjectReference>
+    </ItemGroup>
+    <ItemGroup>
+      <None Include="packages.config" />
+    </ItemGroup>
+    <ItemGroup>
+      <Analyzer Include="packages\StyleCop.Analyzers.Unstable.1.2.0.354\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
+      <Analyzer Include="packages\StyleCop.Analyzers.Unstable.1.2.0.354\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
+    </ItemGroup>
+    <ItemGroup>
+      <EmbeddedResource Include="FCBuffs\BuffSetttingsFrm.resx" />
+      <EmbeddedResource Include="Repair\RepairSettingsFrm.resx">
+        <DependentUpon>RepairSettingsFrm.cs</DependentUpon>
+      </EmbeddedResource>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Properties" />
+    </ItemGroup>
+    <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+    <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+         Other similar extension points exist, see Microsoft.Common.targets.
+    <Target Name="BeforeBuild">
+    </Target>
+    <Target Name="AfterBuild">
+    </Target>
+    -->
+
+</Project>
