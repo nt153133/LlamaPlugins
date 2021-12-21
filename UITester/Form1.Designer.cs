@@ -37,6 +37,11 @@
             this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.BtnSaveState = new System.Windows.Forms.Button();
+            this.btnCompare = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // listBox1
@@ -49,9 +54,9 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(10, 419);
+            this.button1.Location = new System.Drawing.Point(10, 418);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(71, 22);
+            this.button1.Size = new System.Drawing.Size(71, 23);
             this.button1.TabIndex = 1;
             this.button1.Text = "Refresh";
             this.button1.UseVisualStyleBackColor = true;
@@ -60,9 +65,9 @@
             // button2
             // 
             this.button2.Enabled = false;
-            this.button2.Location = new System.Drawing.Point(151, 418);
+            this.button2.Location = new System.Drawing.Point(152, 418);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(65, 22);
+            this.button2.Size = new System.Drawing.Size(65, 23);
             this.button2.TabIndex = 2;
             this.button2.Text = "Select";
             this.button2.UseVisualStyleBackColor = true;
@@ -81,37 +86,87 @@
             this.listBox3.FormattingEnabled = true;
             this.listBox3.Location = new System.Drawing.Point(481, 20);
             this.listBox3.Name = "listBox3";
-            this.listBox3.Size = new System.Drawing.Size(309, 147);
+            this.listBox3.Size = new System.Drawing.Size(345, 277);
             this.listBox3.TabIndex = 5;
             // 
             // richTextBox1
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(481, 227);
+            this.richTextBox1.Location = new System.Drawing.Point(481, 303);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(309, 103);
+            this.richTextBox1.Size = new System.Drawing.Size(345, 103);
             this.richTextBox1.TabIndex = 8;
             this.richTextBox1.Text = "";
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(493, 370);
+            this.textBox1.Location = new System.Drawing.Point(493, 427);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(222, 20);
             this.textBox1.TabIndex = 11;
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(492, 352);
+            this.label1.Location = new System.Drawing.Point(492, 409);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(184, 18);
             this.label1.TabIndex = 12;
             this.label1.Text = "CE SendAction Breakpoint";
             // 
+            // BtnSaveState
+            // 
+            this.BtnSaveState.Location = new System.Drawing.Point(225, 418);
+            this.BtnSaveState.Name = "BtnSaveState";
+            this.BtnSaveState.Size = new System.Drawing.Size(83, 23);
+            this.BtnSaveState.TabIndex = 13;
+            this.BtnSaveState.Text = "Save State";
+            this.BtnSaveState.UseVisualStyleBackColor = true;
+            this.BtnSaveState.Click += new System.EventHandler(this.BtnSaveState_Click);
+            // 
+            // btnCompare
+            // 
+            this.btnCompare.Enabled = false;
+            this.btnCompare.Location = new System.Drawing.Point(402, 418);
+            this.btnCompare.Name = "btnCompare";
+            this.btnCompare.Size = new System.Drawing.Size(75, 23);
+            this.btnCompare.TabIndex = 14;
+            this.btnCompare.Text = "Compare";
+            this.btnCompare.UseVisualStyleBackColor = true;
+            this.btnCompare.Click += new System.EventHandler(this.btnCompare_Click);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(10, 1);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(99, 16);
+            this.label2.TabIndex = 15;
+            this.label2.Text = "Windows";
+            // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(225, 1);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(99, 16);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "Window Elements";
+            // 
+            // label4
+            // 
+            this.label4.Location = new System.Drawing.Point(481, 1);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 16);
+            this.label4.TabIndex = 17;
+            this.label4.Text = "Changed Elements";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(838, 450);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.btnCompare);
+            this.Controls.Add(this.BtnSaveState);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.richTextBox1);
@@ -126,6 +181,13 @@
             this.ResumeLayout(false);
             this.PerformLayout();
         }
+
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label4;
+
+        private System.Windows.Forms.Button BtnSaveState;
+        private System.Windows.Forms.Button btnCompare;
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
