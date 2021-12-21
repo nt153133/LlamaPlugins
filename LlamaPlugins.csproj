@@ -61,6 +61,10 @@
         <Compile Include="Repair\RepairSettingsFrm.Designer.cs">
           <DependentUpon>RepairSettingsFrm.cs</DependentUpon>
         </Compile>
+        <Compile Include="UITester\Form1.cs" />
+        <Compile Include="UITester\Form1.Designer.cs" />
+        <Compile Include="UITester\LlamaUI.cs" />
+        <Compile Include="UITester\UI Tester.cs" />
         <Compile Include="Ventures\VenturesPlugin.cs" />
     </ItemGroup>
     <ItemGroup>
@@ -86,6 +90,7 @@
       <EmbeddedResource Include="Repair\RepairSettingsFrm.resx">
         <DependentUpon>RepairSettingsFrm.cs</DependentUpon>
       </EmbeddedResource>
+      <EmbeddedResource Include="UITester\Form1.resx" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Properties" />
