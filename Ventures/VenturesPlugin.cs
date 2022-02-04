@@ -17,20 +17,12 @@ namespace LlamaPlugins.Ventures
 
         public override string Name { get; } = NameValue;
 
-        private static bool FoundLisbeth = false;
-        private static bool FoundLL = false;
-        private static string HookName = "VenturesHook";
-        private static string HookName1 = "VenturesCraftCycle";
+        private static readonly string HookName = "VenturesHook";
+        private static readonly string HookName1 = "VenturesCraftCycle";
 
-        public override bool WantButton
-        {
-            get { return false; }
-        }
+        public override bool WantButton => false;
 
-        public override string ButtonText
-        {
-            get { return "Toggle"; }
-        }
+        public override string ButtonText => "Toggle";
 
         public override void OnButtonPress()
         {
@@ -67,6 +59,11 @@ namespace LlamaPlugins.Ventures
         private void AddHooks()
         {
             var hooks = LlamaLibrary.Helpers.Lisbeth.GetHookList();
+            if (hooks == null)
+            {
+                return;
+            }
+
             Log.Information($"Adding {HookName} Hook");
             if (!hooks.Contains(HookName))
             {
@@ -83,6 +80,11 @@ namespace LlamaPlugins.Ventures
         private void RemoveHooks()
         {
             var hooks = LlamaLibrary.Helpers.Lisbeth.GetHookList();
+            if (hooks == null)
+            {
+                return;
+            }
+
             Log.Information($"Removing {HookName} Hook");
             if (hooks.Contains(HookName))
             {
