@@ -62,7 +62,7 @@ namespace LlamaPlugins.Repair
             get
             {
                 return new Decorator(
-                    r => !Core.Me.InCombat && !MovementManager.IsOccupied && !Repairing,
+                    r => RepairSettings.Instance.RepairThreshold >= 0 && !Core.Me.InCombat && !MovementManager.IsOccupied && !Repairing,
                     new PrioritySelector(new Decorator(
                                          r => InventoryManager.EquippedItems.Any(item => item.Item != null && item.Item.RepairItemId != 0 && item.Condition < RepairSettings.Instance.RepairThreshold),
                                          new Sequence(
@@ -125,7 +125,10 @@ namespace LlamaPlugins.Repair
 
         private void OnHooksCleared(object sender, EventArgs e)
         {
-            AddHooks();
+            if (PluginManager.Plugins.FirstOrDefault(p => p.Plugin.Name == _Name && p.Enabled) != null)
+            {
+                AddHooks();
+            }
         }
 
         public override void OnEnabled()
