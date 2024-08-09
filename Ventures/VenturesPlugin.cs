@@ -73,7 +73,7 @@ namespace LlamaPlugins.Ventures
             Log.Information($"Adding {HookName1} Hook");
             if (!hooks.Contains(HookName1))
             {
-                LlamaLibrary.Helpers.Lisbeth.AddCraftCycleHook(HookName, LlamaLibrary.Retainers.HelperFunctions.CheckVentureTask);
+                LlamaLibrary.Helpers.Lisbeth.AddCraftHook(HookName, LlamaLibrary.Retainers.HelperFunctions.CheckVentureTask);
             }
         }
 
@@ -94,7 +94,7 @@ namespace LlamaPlugins.Ventures
             Log.Information($"Removing {HookName1} Hook");
             if (hooks.Contains(HookName1))
             {
-                LlamaLibrary.Helpers.Lisbeth.RemoveCraftCycleHook(HookName1);
+                LlamaLibrary.Helpers.Lisbeth.RemoveCraftHook(HookName1);
             }
         }
     }
