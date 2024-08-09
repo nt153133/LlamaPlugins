@@ -6,22 +6,11 @@
     <UseWindowsForms>true</UseWindowsForms>
     <UseWPF>true</UseWPF>
     <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+    <ImplicitUsings>disable</ImplicitUsings>
   </PropertyGroup>
-  <ItemGroup>
-    <Reference Include="GreyMagic">
-      <HintPath>..\..\GreyMagic.dll</HintPath>
-    </Reference>
-    <Reference Include="RebornBuddy">
-      <HintPath>..\..\RebornBuddy.exe</HintPath>
-    </Reference>
-  </ItemGroup>
   <ItemGroup>
     <Content Include=".editorconfig" />
     <Content Include=".gitignore" />
-  </ItemGroup>
-  <ItemGroup>
-    <Analyzer Include="packages\StyleCop.Analyzers.Unstable.1.2.0.354\analyzers\dotnet\cs\StyleCop.Analyzers.CodeFixes.dll" />
-    <Analyzer Include="packages\StyleCop.Analyzers.Unstable.1.2.0.354\analyzers\dotnet\cs\StyleCop.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties" />
